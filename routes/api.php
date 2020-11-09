@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::group([
     'prefix' => 'v1'
 ], static function () {
-    Route::get('profiles', 'AuthController@login');
+    Route::post('login', 'AuthController@login');
+    Route::get('refresh', 'AuthController@login');
 
     Route::group([
         'middleware' => 'jwt.auth'

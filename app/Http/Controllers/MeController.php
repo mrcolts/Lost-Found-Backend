@@ -5,14 +5,16 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\LoginRequest;
+use App\Http\Traits\AuthTrait;
+use App\Models\User;
 
-class AuthController extends BaseController
+class MeController extends BaseController
 {
-    public function login(LoginRequest $request)
+    use AuthTrait;
+
+    public function index()
     {
-        if (!$token = auth()->attempt($request->only(['email', 'password']))) {
-            return $this->sendError('Wrong password', null, 418);
-        }
+        $me = $this->takeUser();
 
         return $this->sendResponse(
             [

@@ -6,7 +6,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostStoreRequest extends FormRequest
+class PostGetRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -18,6 +18,14 @@ class PostStoreRequest extends FormRequest
         return true;
     }
 
+    public function all($keys = null)
+    {
+        $data = parent::all();
+        $data['post_id'] = $this->route('post_id');
+
+        return $data;
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -26,10 +34,8 @@ class PostStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required', 'email'],
-            'description' => ['required', 'string'],
-            'category' => ['required', 'uuid', 'exists:categories,id'],
-            'image' => ['required', 'image', 'max:8192'],
+            'post_id' => ['required', 'uuid', 'exists:posts,id']
         ];
     }
+
 }

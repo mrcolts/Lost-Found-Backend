@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,9 +22,24 @@ Route::group([
     Route::group([
         'middleware' => 'jwt.auth'
     ], static function () {
-        Route::get('me', 'MeController@index');
-        Route::get('me/items', 'MeController@items_index');
+        Route::group('me', static function() {
+            Route::get('', 'MeController@index');
+            Route::group('items', static function() {
+                Route::get('', 'MeController@items_index');
+                Route::post('', 'MeController@items_store');
+            });
+            Route::group('posts', static function() {
+                Route::get('', 'PostsController@user_index');
+                Route::delete('{post_id}', 'PostsController@delete');
+            });
+        });
+
         Route::get('categories', 'CategoriesController@index');
-//        Route::get('posts', 'MeController@index');
+
+        Route::group('posts', static function() {
+            Route::get('PostsController@index');
+            Route::post('PostsController@store');
+
+        });
     });
 });

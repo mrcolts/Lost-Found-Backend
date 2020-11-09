@@ -15,7 +15,10 @@ class PostsResource extends JsonResource
     public function toArray($request)
     {
         return [
-            ''
+            'title' => $this['title'],
+            'description' => $this['description'],
+            'imageIndex' => $this['img_index'],
+            'category' => CategoriesResource::make($this['category'])
         ];
     }
 }

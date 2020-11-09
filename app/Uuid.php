@@ -9,6 +9,9 @@ use Illuminate\Support\Str;
 trait Uuid
 {
     /**
+     *
+     *
+     *
      * Boot functions from Laravel
      */
     protected static function boot()

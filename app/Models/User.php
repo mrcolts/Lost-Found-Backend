@@ -48,12 +48,17 @@ class User extends Authenticatable implements JWTSubject
 
     public function contacts()
     {
-        $this->hasMany(Post::class);
+        return $this->hasMany(Post::class);
     }
 
     public function items()
     {
-        $this->hasMany(UserItem::class);
+        return $this->hasMany(UserItem::class);
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
     }
 
     /**

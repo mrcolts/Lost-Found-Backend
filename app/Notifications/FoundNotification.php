@@ -49,7 +49,7 @@ class FoundNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('Верификация аккаунта')
+            ->subject('Найдена ваша собственность!')
             ->greeting("Здравствуйте, $this->full_name!")
             ->line("Вашу собственность «$this->lost_item_name» нашли.")
             ->action('Связаться', config('common.web.lost_item_page') . "/$this->lost_item_id")

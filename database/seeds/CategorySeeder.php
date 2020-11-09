@@ -12,10 +12,10 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        $statuses = ['along', 'lost', 'archived'];
-        foreach ($statuses as $status) {
+        $statuses = ['Животные', 'Документы', 'Гаджеты', 'Ключи', 'Одежда', 'Аксессуары', 'Прочее'];
+        foreach ($statuses as $categories) {
             Category::create([
-                'name' => $status
+                'name' => $categories
              ]);
         }
 

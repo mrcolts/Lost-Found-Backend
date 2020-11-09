@@ -22,7 +22,7 @@ $factory->define(User::class, function (Faker $faker) {
     $name = $faker->name;
     return [
         'full_name' => $name,
-        'email' => $name.'@mrcolt.com',
+        'email' => str_replace(' ', '', $name).'@mrcolt.com',
         'password' => Hash::make('12345678'),
     ];
 });

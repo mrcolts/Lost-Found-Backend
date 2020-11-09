@@ -1,10 +1,12 @@
 <?php
 
+
 namespace App\Http\Resources;
+
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class MeItemsResource extends JsonResource
+class StatusResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,11 +18,7 @@ class MeItemsResource extends JsonResource
     {
         return [
             'id' => $this['id'],
-            'name' => $this['name'],
-            'imageIndex' => $this['img_index'],
-            'description' => $this['description'],
-            'categories' => CategoriesResource::collection($this['categories']),
-            'status' => StatusResource::make($this['status'])
+            'name' => $this['name']
         ];
     }
 }

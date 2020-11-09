@@ -27,7 +27,7 @@ class MeController extends BaseController
     public function items_index()
     {
         $me = $this->takeUser();
-        $me_items = $me->items();
+        $me_items = $me->items()->with(['status']);
 
         return $this->sendResponse(
             MeItemsResource::collection($me_items),

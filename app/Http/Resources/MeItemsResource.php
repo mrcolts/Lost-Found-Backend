@@ -15,7 +15,10 @@ class MeItemsResource extends JsonResource
     public function toArray($request)
     {
         return [
-            ''
+            'name' => $this['name'],
+            'imageIndex' => $this['img_index'],
+            'description' => $this['description'],
+            'categories' => CategoriesResource::collection($this['categories']),
         ];
     }
 }

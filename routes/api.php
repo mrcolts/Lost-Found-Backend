@@ -14,8 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
+Route::group([
+    'prefix' => 'v1'
+], static function () {
+    Route::get('profiles', 'AuthController@login');
 
-Route::get('profiles', 'AuthController@login');
+    Route::group([
+        'middleware' => 'jwt.auth'
+    ], static function () {
+        Route::get('me', 'MeController@index');
+        Route::get('me/items', 'MeController@items_index');
+        Route::get('categories', 'CategoriesController@index');
+//        Route::get('posts', 'MeController@index');
+    });
+});

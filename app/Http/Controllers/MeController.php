@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\LoginRequest;
+use App\Http\Resources\MeItemsResource;
+use App\Http\Resources\MeResource;
 use App\Http\Traits\AuthTrait;
 use App\Models\User;
 
@@ -17,28 +19,19 @@ class MeController extends BaseController
         $me = $this->takeUser();
 
         return $this->sendResponse(
-            [
-                'accessToken' => $token,
-                'tokenType' => 'Bearer',
-                'expiresIn' => time() + config('jwt.ttl') * 60
-            ],
+            MeResource::make($me),
             'Logged in successfully.'
         );
     }
 
-    public function refresh()
+    public function items_index()
     {
-        if (!$token = auth()->refresh()) {
-            return $this->sendError('Access denied.', null, 418);
-        }
+        $me = $this->takeUser();
+        $me_items = $me->items();
 
         return $this->sendResponse(
-            [
-                'accessToken' => $token,
-                'tokenType' => 'Bearer',
-                'expiresIn' => time() + config('jwt.ttl') * 60
-            ],
-            'Token refreshed successfully.'
+            MeItemsResource::collection($me_items),
+            'Logged in successfully.'
         );
     }
 }

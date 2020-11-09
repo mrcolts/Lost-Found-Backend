@@ -10,9 +10,11 @@ class UserItem extends Model
     use Uuid;
 
     protected $fillable = [
-      'name',
-      'img_index',
-      'status'
+        'name',
+        'img_index',
+        'category_id',
+        'description',
+        'status',
     ];
 
     public function user()

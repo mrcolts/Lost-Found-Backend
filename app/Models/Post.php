@@ -3,8 +3,12 @@
 namespace App\Models;
 
 use App\Uuid;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @mixin Builder
+ */
 class Post extends Model
 {
     use Uuid;

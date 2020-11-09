@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
@@ -12,14 +13,13 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-
         factory(User::class, 5)->create();
-//        /** @var User $user */
-//        $alice = User::create([
-//            'full_name' => 'Алиса Селезнева',
-//            'email'=>'lostnfound@mrcolt.com',
-//            'password' => Hash::make('12345678'),
-//        ]);
+        /** @var User $user */
+        User::create([
+            'full_name' => 'Мистер Пользователь',
+            'email'=>'user@mrcolt.com',
+            'password' => Hash::make('12345678'),
+        ]);
 
     }
 }

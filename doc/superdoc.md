@@ -1,4 +1,8 @@
 - [Логин](#логин)
+- [Профиль](#профиль)
+- [Категории](#категории)
+- [Статусы](#статусы)
+
 
 # Логин
 
@@ -13,6 +17,7 @@ https://lostandfound-api.movily.app/api/v1/login
     "password" : "12345678"
 }
 ```
+
 
 # Профиль
 
@@ -31,4 +36,42 @@ Bearer: {token}
 ```
 нет
 ```
+
+
+# Категории
+
+## URL
+```
+https://lostandfound-api.movily.app/api/v1/categories
+```
+
+## Headers
+```
+Content-Type: application/json
+Bearer: {token}
+```
+
+## Parameters
+```
+нет
+```
+
+# Статусы
+
+## URL
+```
+https://lostandfound-api.movily.app/api/v1/statuses
+```
+
+## Headers
+```
+Content-Type: application/json
+Bearer: {token}
+```
+
+## Parameters
+```
+нет
+```
+
 

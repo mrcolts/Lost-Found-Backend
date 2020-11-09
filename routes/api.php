@@ -22,13 +22,13 @@ Route::group([
     Route::group([
         'middleware' => 'jwt.auth'
     ], static function () {
-        Route::group('me', static function() {
+        Route::group(['prefix' => 'me'], static function() {
             Route::get('', 'MeController@index');
             Route::group('items', static function() {
                 Route::get('', 'MeController@items_index');
                 Route::post('', 'MeController@items_store');
             });
-            Route::group('posts', static function() {
+            Route::group(['prefix' => 'posts'], static function() {
                 Route::get('', 'PostsController@user_index');
                 Route::delete('{post_id}', 'PostsController@delete');
             });
@@ -36,7 +36,7 @@ Route::group([
 
         Route::get('categories', 'CategoriesController@index');
 
-        Route::group('posts', static function() {
+        Route::group(['prefix' => 'posts'], static function() {
             Route::get('PostsController@index');
             Route::post('PostsController@store');
 

@@ -35,6 +35,7 @@ Route::group([
         });
 
         Route::get('categories', 'CategoriesController@index');
+        Route::get('statuses', 'StatusController@index');
 
         Route::group(['prefix' => 'posts'], static function() {
             Route::get('','PostController@index');

@@ -20,8 +20,7 @@ class CreateUsersTable extends Migration
 
             $table->string('password');
             $table->string('img_index')->nullable(true);
-
-            $table->rememberToken();
+            
             $table->timestamps();
         });
     }

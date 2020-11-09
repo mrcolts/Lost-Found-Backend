@@ -17,7 +17,7 @@ class MeResource extends JsonResource
         return [
             'fullName' => $this['full_name'],
             'email' => $this['email'],
-            'phone' => $this['contacts']['phone'],
+            'avatar' => $this['img_index'],
             'address' => ContactsResource::collection($this['contacts']),
         ];
     }

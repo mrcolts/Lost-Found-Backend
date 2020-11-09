@@ -19,6 +19,7 @@ class MeItemsResource extends JsonResource
             'imageIndex' => $this['img_index'],
             'description' => $this['description'],
             'categories' => CategoriesResource::collection($this['categories']),
+            'status' => StatusResource::make($this['status'])
         ];
     }
 }

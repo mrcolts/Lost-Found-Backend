@@ -23,16 +23,6 @@ class CreatePostsTable extends Migration
             $table->string('img_index');
 
             $table->timestamps();
-
-            $table->foreign('user_id')
-                ->on('user')
-                ->references('id')
-                ->onDelete('cascade');
-
-            $table->foreign('category_id')
-                ->on('category')
-                ->references('id')
-                ->onDelete('cascade');
         });
     }
 

@@ -18,11 +18,6 @@ class CreateContactsTable extends Migration
             $table->uuid('user_id');
             $table->string('phone')->nullable(true);
             $table->string('address')->nullable();
-
-            $table->foreign('user_id')
-                ->on('user')
-                ->references('id')
-                ->onDelete('cascade');
         });
     }
 

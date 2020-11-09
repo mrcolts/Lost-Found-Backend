@@ -18,21 +18,10 @@ class CreateUserItemsTable extends Migration
             $table->uuid('user_id');
             $table->uuid('category_id');
 
-
             $table->string('img_index')->nullable();
             $table->text('description');
             $table->string('status')->default('along');
             $table->timestamps();
-
-            $table->foreign('user_id')
-                ->on('user')
-                ->references('id')
-                ->onDelete('cascade');
-
-            $table->foreign('category_id')
-                ->on('category')
-                ->references('id')
-                ->onDelete('cascade');
         });
     }
 

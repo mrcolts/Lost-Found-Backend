@@ -37,8 +37,8 @@ Route::group([
         Route::get('categories', 'CategoriesController@index');
 
         Route::group(['prefix' => 'posts'], static function() {
-            Route::get('PostsController@index');
-            Route::post('PostsController@store');
+            Route::get('','PostsController@index');
+            Route::post('','PostsController@store');
 
         });
     });

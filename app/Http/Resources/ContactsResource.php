@@ -1,10 +1,12 @@
 <?php
 
+
 namespace App\Http\Resources;
+
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class MeResource extends JsonResource
+class ContactsResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,10 +17,9 @@ class MeResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'fullName' => $this['full_name'],
-            'email' => $this['email'],
-            'phone' => $this['contacts']['phone'],
-            'address' => ContactsResource::collection($this['contacts']),
+            'phone' => $this['phone'],
+            'address' => $this['address'],
+
         ];
     }
 }

@@ -24,7 +24,7 @@ Route::group([
     ], static function () {
         Route::group(['prefix' => 'me'], static function() {
             Route::get('', 'MeController@index');
-            Route::group('items', static function() {
+            Route::group(['prefix' => 'items'], static function() {
                 Route::get('', 'MeController@items_index');
                 Route::post('', 'MeController@items_store');
             });

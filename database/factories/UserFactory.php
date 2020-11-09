@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Hash;
 $factory->define(User::class, function (Faker $faker) {
     $name = $faker->name;
     return [
-        'name' => $name,
+        'full_name' => $name,
         'email' => $name.'@mrcolt.com',
         'password' => Hash::make('12345678'),
     ];

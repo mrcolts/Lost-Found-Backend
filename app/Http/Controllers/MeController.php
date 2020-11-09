@@ -4,7 +4,6 @@
 namespace App\Http\Controllers;
 
 
-use App\Http\Requests\LoginRequest;
 use App\Http\Resources\MeItemsResource;
 use App\Http\Resources\MeResource;
 use App\Http\Traits\AuthTrait;
@@ -16,6 +15,7 @@ class MeController extends BaseController
 
     public function index()
     {
+        /** @var User $me */
         $me = $this->takeUser();
 
         return $this->sendResponse(

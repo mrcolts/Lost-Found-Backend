@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use App\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
 {
+    use Uuid;
+
     protected $fillable = [
-        'email',
         'phone',
         'address',
     ];

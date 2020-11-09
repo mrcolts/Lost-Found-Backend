@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    use Uuid;
+
     protected $fillable = [
         'title',
         'description',

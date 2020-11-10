@@ -44,4 +44,6 @@ Route::group([
 
         Route::get('stories','StoryController@index');
     });
+
+    Route::post('item_found', 'FoundItemController@post');
 });

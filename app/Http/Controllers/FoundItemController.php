@@ -10,9 +10,10 @@ class FoundItemController extends BaseController
 {
     use AuthTrait;
 
-    public function post()
+    public function store()
     {
-        if($me = $this->takeUser())
+        $me = $this->takeUser();
+        if( is_null($me))
         {
             return $me->full_name;
         }

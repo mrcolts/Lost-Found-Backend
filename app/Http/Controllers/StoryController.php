@@ -26,7 +26,7 @@ class StoryController extends BaseController
             ->orderBy('posts_count', 'desc');
 
         return $this->sendResponse(
-            StoriesResource::collection($stories),
+            StoriesResource::collection($stories->get()),
             'Stories retrieved successfully.'
         );
 

@@ -68,7 +68,7 @@ class PostController extends BaseController
     public function index()
     {
         $posts = Post
-            ::with('category')
+            ::with(['category', 'user'])
             ->orderBy('created_at', 'desc')
             ->get();
 

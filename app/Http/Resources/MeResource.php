@@ -20,6 +20,7 @@ class MeResource extends JsonResource
             'email' => $this['email'],
             'avatar' => $this['img_index'],
             'address' => ContactsResource::collection($this['contacts']),
+            'karma' => $this['karma']
         ];
     }
 }

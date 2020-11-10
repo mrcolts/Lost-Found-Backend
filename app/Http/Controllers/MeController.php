@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Helpers\ImageUploaderHelper;
 use App\Http\Requests\UserItemStoreRequest;
+use App\Http\Resources\KarmaResource;
 use App\Http\Resources\MeItemsResource;
 use App\Http\Resources\MeResource;
 use App\Http\Traits\AuthTrait;
@@ -36,6 +37,16 @@ class MeController extends BaseController
         return $this->sendResponse(
             MeItemsResource::collection($me_items),
             'Logged in successfully.'
+        );
+    }
+
+    public function karma_index()
+    {
+        $me = $this->takeUser();
+
+        return $this->sendResponse(
+            KarmaResource::make($me->karma),
+            'Karma retrieved successfully.'
         );
     }
 

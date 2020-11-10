@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->uuid('category_id');
-            $table->string('img_index');
+            $table->string('img_index')->nullable();
 
             $table->timestamps();
         });

@@ -29,8 +29,8 @@ Route::group([
                 Route::post('', 'MeController@item_store');
             });
             Route::group(['prefix' => 'posts'], static function() {
-                Route::get('', 'PostsController@user_index');
-                Route::delete('{post_id}', 'PostsController@delete');
+                Route::get('', 'PostController@user_index');
+                Route::delete('{post_id}', 'PostController@delete');
             });
         });
 

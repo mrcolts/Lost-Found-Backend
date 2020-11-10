@@ -119,7 +119,7 @@
                     <!-- START MAIN CONTENT AREA -->
                     <tr>
                         <!-- <div style="background-color: #F2F2F2;"> -->
-                        <img src="https://movily.app/assets/img/logo/mail-logo.jpg" style="width: 100%; height: 100%;"
+                        <img src="https://lostandfound-api.movily.app/mail-logo1.jpg" style="width: 100%; height: 100%;"
                              alt="Logo">
                         <!-- </div> -->
                         <td class="wrapper"
@@ -137,8 +137,9 @@
 
                                         <div width="100%" cellspacing="0" cellpadding="0"
                                              style="Margin: 30px; Margin-bottom: 30px;">
-                                            <img src="{{ $qr_url }}" alt="QR-код">
+                                            <img src="{{ $qr_url }}" width="800" height="800" alt="QR-код">
                                         </div>
+
                                         @foreach ($outroLines as $line)
                                             <p style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; Margin-bottom: 15px; line-height: 26px;">
                                                 {{ $line }}
@@ -148,7 +149,7 @@
                                         <p style="font-family: sans-serif; font-size: 12px; font-weight: normal; line-height: 18px; margin: 0; Margin-bottom: 15px;">
                                             Если у вас возникли какие-либо проблемы с входом в систему, обратитесь в
                                             службу поддержки:
-                                            <a href="mailto:support@movily.app">support@movily.app</a>
+                                            <a href="mailto:support@lostandfound.movily.app">support@lostandfound.movily.app</a>
                                         </p>
                                         <hr style="color: #D0D6D9; background-color: #D0D6D9; border-width: 0; height: 2px; Margin-top: 30px; Margin-bottom: 30px;">
                                         {{--                                        <a href="https://example.com" style="font-family: sans-serif; font-size: 12px; line-height: 18px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Политика конфиденциальности</a>--}}

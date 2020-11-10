@@ -1,67 +1,4 @@
-{{--@component('mail::message')--}}
-{{-- Greeting --}}
-{{--@if (! empty($greeting))--}}
-{{--# {{ $greeting }}--}}
-{{--@else--}}
-{{--@if ($level === 'error')--}}
-{{--# @lang('Whoops!')--}}
-{{--@else--}}
-{{--# @lang('Hello!')--}}
-{{--@endif--}}
-{{--@endif--}}
-
-{{-- Intro Lines --}}
-{{--@foreach ($introLines as $line)--}}
-{{--{{ $line }}--}}
-
-{{--@endforeach--}}
-
-{{-- Action Button --}}
-{{--@isset($actionText)--}}
-{{--<?php--}}
-{{--    switch ($level) {--}}
-{{--        case 'success':--}}
-{{--        case 'error':--}}
-{{--            $color = $level;--}}
-{{--            break;--}}
-{{--        default:--}}
-{{--            $color = 'primary';--}}
-{{--    }--}}
-{{--?>--}}
-{{--@component('mail::button', ['url' => $actionUrl, 'color' => $color])--}}
-{{--{{ $actionText }}--}}
-{{--@endcomponent--}}
-{{--@endisset--}}
-
-{{-- Outro Lines --}}
-{{--@foreach ($outroLines as $line)--}}
-{{--{{ $line }}--}}
-
-{{--@endforeach--}}
-
-{{-- Salutation --}}
-{{--@if (! empty($salutation))--}}
-{{--{{ $salutation }}--}}
-{{--@else--}}
-{{--@lang('С уважением'),<br>--}}
-{{--{{ config('app.name') }}--}}
-{{--@endif--}}
-
-{{-- Subcopy --}}
-{{--@isset($actionText)--}}
-{{--@slot('subcopy')--}}
-{{--@lang(--}}
-{{--    "Если у вас возникли проблемы с нажатием кнопки \":actionText\",\n".--}}
-{{--    'скопируйте и вставьте нижеприведенный URL в ваш веб-браузер: ',--}}
-{{--    [--}}
-{{--        'actionText' => $actionText,--}}
-{{--    ]--}}
-{{--) <span class="break-all">[{{ $displayableActionUrl }}]({{ $actionUrl }})</span>--}}
-{{--@endslot--}}
-{{--@endisset--}}
-{{--@endcomponent--}}
-
-        <!doctype html>
+<!doctype html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width">
@@ -182,7 +119,7 @@
                     <!-- START MAIN CONTENT AREA -->
                     <tr>
                         <!-- <div style="background-color: #F2F2F2;"> -->
-                        <img src="https://movily.app/assets/img/logo/mail-logo.jpg" style="width: 100%; height: 100%;"
+                        <img src="https://lostandfound-api.movily.app/mail-logo1.jpg" style="width: 100%; height: 100%;"
                              alt="Logo">
                         <!-- </div> -->
                         <td class="wrapper"
@@ -206,7 +143,7 @@
                                                         <tr>
                                                             <td style="border-radius: 2px;" bgcolor="#eb314d">
                                                                 <a href="{{ $actionUrl  }}" target="_blank"
-                                                                   style="padding: 8px 12px; border: 1px solid #E65A55;border-radius: 2px;font-family: sans-serif;font-size: 14px; line-height: 20px; color: #ffffff;text-decoration: none;font-weight:bold;display: inline-block;">
+                                                                   style="padding: 8px 12px; border: 1px solid #0047c7;border-radius: 2px;font-family: sans-serif;font-size: 14px; line-height: 20px; color: #ffffff;text-decoration: none;font-weight:bold;display: inline-block;">
                                                                     {{ $actionText }}
                                                                 </a>
                                                             </td>
@@ -224,7 +161,7 @@
                                         <p style="font-family: sans-serif; font-size: 12px; font-weight: normal; line-height: 18px; margin: 0; Margin-bottom: 15px;">
                                             Если у вас возникли какие-либо проблемы с входом в систему, обратитесь в
                                             службу поддержки:
-                                            <a href="mailto:support@movily.app">support@movily.app</a>
+                                            <a href="mailto:support@lostandfound.movily.app">support@lostandfound.movily.app</a>
                                         </p>
                                         <hr style="color: #D0D6D9; background-color: #D0D6D9; border-width: 0; height: 2px; Margin-top: 30px; Margin-bottom: 30px;">
                                         {{--                                        <a href="https://example.com" style="font-family: sans-serif; font-size: 12px; line-height: 18px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Политика конфиденциальности</a>--}}

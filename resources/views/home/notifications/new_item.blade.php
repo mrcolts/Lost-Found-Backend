@@ -139,6 +139,7 @@
                                              style="Margin: 30px; Margin-bottom: 30px;">
                                             <img src="{{ $qr_url }}" alt="QR-код">
                                         </div>
+
                                         @foreach ($outroLines as $line)
                                             <p style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; Margin-bottom: 15px; line-height: 26px;">
                                                 {{ $line }}

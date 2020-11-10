@@ -137,7 +137,7 @@
 
                                         <div width="100%" cellspacing="0" cellpadding="0"
                                              style="Margin: 30px; Margin-bottom: 30px;">
-                                            <img src="{{ $qr_url }}" width="800" height="800" alt="QR-код">
+                                            <img src="{{ $qr_url }}" width="100%" height="100%" alt="QR-код">
                                         </div>
 
                                         @foreach ($outroLines as $line)

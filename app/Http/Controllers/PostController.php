@@ -39,7 +39,7 @@ class PostController extends BaseController
         /** @var User $me */
         $me = $this->takeUser();
 
-        $image = ImageUploaderHelper::upload($request['img_index']);
+        $image = ImageUploaderHelper::upload($request['image']);
 
         /** @var Post $post */
         $me->posts()->create([

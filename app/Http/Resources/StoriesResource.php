@@ -17,7 +17,7 @@ class StoriesResource extends JsonResource
         return [
             'id' => $this['id'],
             'name' => $this['name'],
-            'metadata' => PostsResource::collection($this['posts'])
+            'posts' => PostsResource::collection($this['posts'])
         ];
     }
 }

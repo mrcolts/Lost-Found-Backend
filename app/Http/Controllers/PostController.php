@@ -24,8 +24,8 @@ class PostController extends BaseController
         $posts = $me
             ->posts()
             ->with('category')
-            ->orderBy('created_at', 'desc');
-
+            ->orderBy('created_at', 'desc')
+            ->get();
         return $this->sendResponse(
             PostsResource::collection($posts),
             'Posts retrieved successfully.'

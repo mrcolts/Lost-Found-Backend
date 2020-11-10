@@ -23,7 +23,7 @@ class PostController extends BaseController
 
         $posts = $me
             ->posts()
-            ->with('category')
+            ->with(['category', 'user'])
             ->orderBy('created_at', 'desc')
             ->get();
         return $this->sendResponse(

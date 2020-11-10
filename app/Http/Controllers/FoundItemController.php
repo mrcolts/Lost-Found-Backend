@@ -12,8 +12,7 @@ class FoundItemController extends BaseController
 
     public function store()
     {
-        $me = $this->takeUser();
-        if( is_null($me))
+        if($me = $this->takeUser())
         {
             return $me->full_name;
         }

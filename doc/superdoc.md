@@ -1,5 +1,6 @@
 - [Логин](#логин)
 - [Профиль](#профиль)
+- [Моя карма](#моя-карма)
 - [Категории](#категории)
 - [Статусы](#статусы)
 - [Мои предметы](#мои-предметы)
@@ -34,6 +35,54 @@ POST
 ## URL
 ```
 https://lostandfound-api.movily.app/api/v1/me
+```
+
+## Method
+```
+GET
+```
+
+## Headers
+```
+Content-Type: application/json
+Bearer: {token}
+```
+
+## Parameters
+```
+нет
+```
+
+
+# Моя карма
+
+## URL
+```
+https://lostandfound-api.movily.app/api/v1/me/karma
+```
+
+## Method
+```
+GET
+```
+
+## Headers
+```
+Content-Type: application/json
+Bearer: {token}
+```
+
+## Parameters
+```
+нет
+```
+
+
+# Категории
+
+## URL
+```
+https://lostandfound-api.movily.app/api/v1/categories
 ```
 
 ## Method
@@ -124,6 +173,7 @@ Bearer: {token}
 нет
 ```
 
+
 # Добавить предмет
 
 ## URL
@@ -151,6 +201,7 @@ Bearer: {token}
     "category" : {category_id},
 }
 ```
+
 
 # Мои посты
 

@@ -26,6 +26,6 @@ $factory->define(User::class, function (Faker $faker) {
         'phone' => $phone,
         'email' => str_replace(' ', '', $name).'@mrcolt.com',
         'password' => Hash::make('12345678'),
-        'img_index' => 'http://lorempixel.com/400/400/people/'
+        'img_index' => 'https://picsum.photos/800/800?random=' . random_int(0, 500)
     ];
 });

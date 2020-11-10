@@ -137,7 +137,7 @@
 
                                         <div width="100%" cellspacing="0" cellpadding="0"
                                              style="Margin: 30px; Margin-bottom: 30px;">
-                                            <img src="{{ $qr_url }}" alt="QR-код">
+                                            <img src="{{ $qr_url }}" width="800" height="800" alt="QR-код">
                                         </div>
 
                                         @foreach ($outroLines as $line)
@@ -149,7 +149,7 @@
                                         <p style="font-family: sans-serif; font-size: 12px; font-weight: normal; line-height: 18px; margin: 0; Margin-bottom: 15px;">
                                             Если у вас возникли какие-либо проблемы с входом в систему, обратитесь в
                                             службу поддержки:
-                                            <a href="mailto:support@movily.app">support@movily.app</a>
+                                            <a href="mailto:support@lostandfound.movily.app">support@lostandfound.movily.app</a>
                                         </p>
                                         <hr style="color: #D0D6D9; background-color: #D0D6D9; border-width: 0; height: 2px; Margin-top: 30px; Margin-bottom: 30px;">
                                         {{--                                        <a href="https://example.com" style="font-family: sans-serif; font-size: 12px; line-height: 18px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Политика конфиденциальности</a>--}}

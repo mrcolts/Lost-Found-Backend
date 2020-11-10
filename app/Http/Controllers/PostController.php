@@ -39,14 +39,15 @@ class PostController extends BaseController
         $me = $this->takeUser();
 
         /** @var Post $post */
-        $post = $me->posts()->create([
+        $me->posts()->create([
             'title' => $request['title'],
             'description' => $request['description'],
+            'img_index' => $request['image'],
             'category_id' => $request['category'],
         ]);
 
         return $this->sendResponse(
-            PostsResource::make($post),
+            null,
             'Post created successfully.'
         );
     }

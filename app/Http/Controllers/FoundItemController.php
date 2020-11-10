@@ -24,6 +24,11 @@ class FoundItemController extends BaseController
 
         if ($me = $this->takeUser())
         {
+            if ($me->items()->find($request['item_id']))
+            {
+                return redirect()->to(config('common.web.self_item').'/'.$request['item_id']);
+            }
+
             $phone = $me->phone;
             $karma = $me->karma;
             $me->update([
@@ -34,9 +39,6 @@ class FoundItemController extends BaseController
         {
             $request->validate([
                 'phone' => ['required', 'string'],
-//                'description' => ['required', 'string'],
-//                'category' => ['required', 'uuid', 'exists:categories,id'],
-//                'image' => ['nullable', 'image', 'max:8192'],
             ]);
             $phone = $request['phone'];
         }

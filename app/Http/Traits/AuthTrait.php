@@ -8,7 +8,7 @@ use App\Models\User;
 
 trait AuthTrait
 {
-    public function takeUser(): User
+    public function takeUser(): ?User
     {
         /** @var User $user */
         $user = auth()->user();

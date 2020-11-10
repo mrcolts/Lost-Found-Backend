@@ -26,10 +26,10 @@ class PostStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required', 'email'],
+            'title' => ['required', 'string'],
             'description' => ['required', 'string'],
             'category' => ['required', 'uuid', 'exists:categories,id'],
-            'image' => ['required', 'image', 'max:8192'],
+            'image' => ['nullable', 'image', 'max:8192'],
         ];
     }
 }

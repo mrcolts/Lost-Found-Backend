@@ -18,13 +18,13 @@ class PostController extends BaseController
 
     public function user_index()
     {
-        /** @var User $me */
         $me = $this->takeUser();
 
         $posts = $me
             ->posts()
-            ->with('category')
-            ->orderBy('created_at', 'desc');
+            ->with(['category', 'user'])
+            ->orderBy('created_at', 'desc')
+            ->get();
 
         return $this->sendResponse(
             PostsResource::collection($posts),
@@ -39,14 +39,15 @@ class PostController extends BaseController
         $me = $this->takeUser();
 
         /** @var Post $post */
-        $post = $me->posts()->create([
+        $me->posts()->create([
             'title' => $request['title'],
             'description' => $request['description'],
+            'img_index' => $request['image'],
             'category_id' => $request['category'],
         ]);
 
         return $this->sendResponse(
-            PostsResource::make($post),
+            null,
             'Post created successfully.'
         );
     }
@@ -68,7 +69,7 @@ class PostController extends BaseController
     public function index()
     {
         $posts = Post
-            ::with('category')
+            ::with(['category', 'user'])
             ->orderBy('created_at', 'desc')
             ->get();
 

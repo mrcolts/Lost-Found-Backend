@@ -30,6 +30,7 @@ Route::group([
             });
             Route::group(['prefix' => 'posts'], static function() {
                 Route::get('', 'PostController@user_index');
+                Route::post('','PostController@store');
                 Route::delete('{post_id}', 'PostController@delete');
             });
         });
@@ -39,8 +40,6 @@ Route::group([
 
         Route::group(['prefix' => 'posts'], static function() {
             Route::get('','PostController@index');
-            Route::post('','PostController@store');
-
         });
 
         Route::get('stories','StoryController@index');

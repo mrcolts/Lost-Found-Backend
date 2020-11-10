@@ -19,7 +19,7 @@ class CreateUserItemsTable extends Migration
             $table->uuid('category_id');
 
             $table->string('name');
-            $table->string('img_index')->nullable();
+            $table->string('img_index')->nullable(true);
             $table->text('description');
             $table->string('status_id');
             $table->timestamps();

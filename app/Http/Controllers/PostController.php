@@ -45,6 +45,7 @@ class PostController extends BaseController
         $me->posts()->create([
             'title' => $request['title'],
             'description' => $request['description'],
+            'location'=>$request['location'],
             'img_index' => $image,
             'category_id' => $request['category'],
         ]);

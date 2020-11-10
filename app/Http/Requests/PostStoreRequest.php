@@ -28,6 +28,7 @@ class PostStoreRequest extends FormRequest
         return [
             'title' => ['required', 'string'],
             'description' => ['required', 'string'],
+            'location' =>['nullable', 'string'],
             'category' => ['required', 'uuid', 'exists:categories,id'],
             'image' => ['nullable', 'image', 'max:8192'],
         ];

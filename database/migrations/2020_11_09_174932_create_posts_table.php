@@ -17,10 +17,11 @@ class CreatePostsTable extends Migration
             $table->uuid('id')->primary();
             $table->uuid('user_id');
 
+            $table->string('location')->nullable(true);
             $table->string('title');
             $table->text('description');
             $table->uuid('category_id');
-            $table->string('img_index')->nullable();
+            $table->string('img_index')->nullable(true);
 
             $table->timestamps();
         });

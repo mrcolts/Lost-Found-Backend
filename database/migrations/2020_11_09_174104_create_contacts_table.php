@@ -17,7 +17,7 @@ class CreateContactsTable extends Migration
             $table->uuid('id')->primary();
             $table->uuid('user_id');
             $table->string('phone')->nullable(true);
-            $table->string('address')->nullable();
+            $table->string('address')->nullable(true);
 
             $table->timestamps();
         });

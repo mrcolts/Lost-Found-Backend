@@ -18,6 +18,7 @@ class PostsResource extends JsonResource
             'id' => $this['id'],
             'title' => $this['title'],
             'description' => $this['description'],
+            'location' => $this['location'],
             'imageIndex' => $this['img_index'],
             'category' => CategoriesResource::make($this['category']),
             'user' => UserResource::make($this['user']),

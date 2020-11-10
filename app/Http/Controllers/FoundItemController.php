@@ -11,14 +11,12 @@ class FoundItemController extends BaseController
 {
     use AuthTrait;
 
-    public function store($request)
+    public function store(PostStoreRequest $request)
     {
         if($me = $this->takeUser())
         {
             return $me->full_name;
         }
-
-        $request = (new PostStoreRequest())->validate($request);
 
         return 'anonymous user';
 

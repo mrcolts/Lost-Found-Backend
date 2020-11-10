@@ -27,8 +27,8 @@ class UserItemStoreRequest extends FormRequest
     {
         return [
             'name' => ['required', 'email'],
-            'avatar' => ['required', 'image', 'max:8192'],
-            'category' => ['required', 'uuid', 'exists:categories,id']
+            'image' => ['required', 'image', 'max:8192'],
+            'category' => ['required', 'uuid', 'exists:categories,id'],
         ];
     }
 }

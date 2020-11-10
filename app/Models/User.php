@@ -25,7 +25,8 @@ class User extends Authenticatable implements JWTSubject
         'phone',
         'full_name',
         'password',
-        'img_index'
+        'img_index',
+        'karma'
     ];
 
     protected $with = [

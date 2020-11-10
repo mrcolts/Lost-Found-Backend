@@ -24,9 +24,10 @@ Route::group([
     ], static function () {
         Route::group(['prefix' => 'me'], static function() {
             Route::get('', 'MeController@index');
+            Route::get('karma', 'MeController@index');
             Route::group(['prefix' => 'items'], static function() {
                 Route::get('', 'MeController@items_index');
-                Route::post('', 'MeController@item_store');
+                Route::post('', 'MeController@karma_index');
             });
             Route::group(['prefix' => 'posts'], static function() {
                 Route::get('', 'PostController@user_index');
@@ -45,5 +46,5 @@ Route::group([
         Route::get('stories','StoryController@index');
     });
 
-    Route::post('found', 'FoundItemController@store');
+    Route::get('found', 'FoundItemController@store');
 });

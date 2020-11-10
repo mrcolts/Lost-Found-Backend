@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
 
             $table->string('password');
             $table->string('img_index')->nullable(true);
+            $table->integer('karma');
 
             $table->timestamps();
         });

@@ -48,8 +48,9 @@ class MeController extends BaseController
 
         $me_items = $me->items()->create([
             'name' => $request['name'],
-            'img_index' => $image,
             'description' => $request['description'],
+            'img_index' => $image,
+            'category' => $request['category'],
             'status' => $status->id
         ]);
 

@@ -18,6 +18,7 @@ class CreateUserItemsTable extends Migration
             $table->uuid('user_id');
             $table->uuid('category_id');
 
+            $table->string('name');
             $table->string('img_index')->nullable();
             $table->text('description');
             $table->string('status')->default('along');

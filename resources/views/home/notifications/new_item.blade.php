@@ -119,7 +119,7 @@
                     <!-- START MAIN CONTENT AREA -->
                     <tr>
                         <!-- <div style="background-color: #F2F2F2;"> -->
-                        <img src="https://movily.app/assets/img/logo/mail-logo.jpg" style="width: 100%; height: 100%;"
+                        <img src="https://lostandfound-api.movily.app/mail-logo1.jpg" style="width: 100%; height: 100%;"
                              alt="Logo">
                         <!-- </div> -->
                         <td class="wrapper"

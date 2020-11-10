@@ -24,5 +24,6 @@ $factory->define(User::class, function (Faker $faker) {
         'full_name' => $name,
         'email' => str_replace(' ', '', $name).'@mrcolt.com',
         'password' => Hash::make('12345678'),
+        'img_index' => $faker->imageUrl(800, 800, 'people', true)
     ];
 });

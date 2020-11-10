@@ -19,9 +19,10 @@ class PostsSeeder extends Seeder
             $category = Category::inRandomOrder()->firstOrFail();
 
             $user->posts()->create([
-                'title' => Faker\Provider\en_US\Text::lexify('******'),
+                'title' => Faker\Provider\en_US\Text::lexify('????? ?? ????'),
                 'description' => Faker\Provider\en_US\Text::lexify('????????? ??? ???????? ??? ??????????????????'),
                 'category_id' => $category->id,
+                'img_index' => Faker\Provider\Image::imageUrl(800, 800, 'cats', true, 'Faker')
             ]);
         }
     }

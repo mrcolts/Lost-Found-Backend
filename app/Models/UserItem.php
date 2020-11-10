@@ -16,6 +16,7 @@ class UserItem extends Model
     protected $fillable = [
         'name',
         'img_index',
+        'status',
         'category_id',
         'description',
         'status',

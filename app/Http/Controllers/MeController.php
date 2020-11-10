@@ -43,7 +43,6 @@ class MeController extends BaseController
     {
         $me = $this->takeUser();
         $status = Status::where('name', 'along')->first();
-
         $image = $request['img_index'] ? ImageUploaderHelper::upload($request['img_index']) : null;
 
         $me_items = $me->items()->create([

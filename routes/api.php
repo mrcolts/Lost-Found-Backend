@@ -42,5 +42,7 @@ Route::group([
             Route::post('','PostController@store');
 
         });
+
+        Route::get('stories','StoryController@index');
     });
 });

@@ -3,7 +3,10 @@
 - [Категории](#категории)
 - [Статусы](#статусы)
 - [Мои предметы](#мои-предметы)
-
+- [Мои предметы](#мои-предметы)
+- [Добавить предмет](#добавить-предмет)
+- [Мои посты](#мои-посты)
+- [Все посты](#все-посты)
 
 # Логин
 
@@ -103,6 +106,81 @@ Bearer: {token}
 ## URL
 ```
 https://lostandfound-api.movily.app/api/v1/me/items
+```
+
+## Method
+```
+GET
+```
+
+## Headers
+```
+Content-Type: application/json
+Bearer: {token}
+```
+
+## Parameters
+```
+нет
+```
+
+# Добавить предмет
+
+## URL
+```
+https://lostandfound-api.movily.app/api/v1/me/items
+```
+
+## Method
+```
+POST
+```
+
+## Headers
+```
+Content-Type: application/json
+Bearer: {token}
+```
+
+## Parameters
+```
+{
+    "name" : {name},
+    "description" : {description},
+    "image" : {image},
+    "category" : {category_id},
+}
+```
+
+# Мои посты
+
+## URL
+```
+https://lostandfound-api.movily.app/api/v1/me/posts
+```
+
+## Method
+```
+GET
+```
+
+## Headers
+```
+Content-Type: application/json
+Bearer: {token}
+```
+
+## Parameters
+```
+нет
+```
+
+
+# Все посты
+
+## URL
+```
+https://lostandfound-api.movily.app/api/v1/posts
 ```
 
 ## Method

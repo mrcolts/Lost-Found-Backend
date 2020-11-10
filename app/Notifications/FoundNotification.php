@@ -51,7 +51,7 @@ class FoundNotification extends Notification
         return (new MailMessage)
             ->subject('Найдена ваша собственность!')
             ->greeting("Здравствуйте, $this->full_name!")
-            ->line("Вашу собственность «$this->lost_item_name» нашли.")
+            ->line("Вашу собственность «{$this->lost_item_name}» нашли.")
             ->action('Связаться', config('common.web.lost_item_page') . "/$this->lost_item_id")
             ->line('С уважением, команда IT Kama Sutra');
     }

@@ -26,6 +26,6 @@ $factory->define(User::class, function (Faker $faker) {
         'phone' => $phone,
         'email' => str_replace(' ', '', $name).'@mrcolt.com',
         'password' => Hash::make('12345678'),
-        'img_index' => $faker->imageUrl(800, 800, 'people', true)
+        'img_index' => 'http://lorempixel.com/400/400/people/'
     ];
 });

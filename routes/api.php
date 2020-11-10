@@ -46,5 +46,6 @@ Route::group([
         Route::get('stories','StoryController@index');
     });
 
-    Route::get('found', 'FoundItemController@store');
+    Route::post('found/{item_id}', 'FoundItemController@store');
+//        ->middleware('throttle,1:1440');
 });

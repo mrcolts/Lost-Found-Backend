@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PostStoreRequest;
 use App\Http\Traits\AuthTrait;
+use Faker\Provider\Image;
 use Illuminate\Http\Request;
 
 class FoundItemController extends BaseController
@@ -14,7 +15,12 @@ class FoundItemController extends BaseController
 
     public function store(Request $request)
     {
-        if($me = $this->takeUser())
+        $request['item_id'] = $request->route('item_id');
+        $request->validate([
+            'item_id' => ['required', 'exists:user_items,id'],
+        ]);
+
+        if ($me = $this->takeUser())
         {
             return $me->full_name;
         }

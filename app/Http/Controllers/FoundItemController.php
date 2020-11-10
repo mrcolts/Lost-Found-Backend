@@ -25,6 +25,10 @@ class FoundItemController extends BaseController
         if ($me = $this->takeUser())
         {
             $phone = $me->phone;
+            $karma = $me->karma;
+            $me->update([
+                'karma' => $karma + 100
+            ]);
         }
         else
         {

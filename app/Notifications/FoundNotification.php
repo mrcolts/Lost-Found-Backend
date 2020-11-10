@@ -17,16 +17,20 @@ class FoundNotification extends Notification
 
     private string $founder_phone;
 
+    private string $location;
+
     /**
-     * Create a new notification instance.
-     *
-     * @return void
+     * FoundNotification constructor.
+     * @param string $full_name
+     * @param string $lost_item_name
+     * @param string $founder_phone
      */
-    public function __construct(string $full_name, string $lost_item_name, string $founder_phone)
+    public function __construct(string $full_name, string $lost_item_name, string $founder_phone, string $location)
     {
         $this->full_name = $full_name;
         $this->lost_item_name = $lost_item_name;
         $this->founder_phone = $founder_phone;
+        $this->location = $location;
     }
 
     /**
@@ -48,12 +52,18 @@ class FoundNotification extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
+        $message = (new MailMessage)
             ->subject('Найдена ваша собственность!')
             ->greeting("Здравствуйте, $this->full_name!")
-            ->line("Вашу собственность «{$this->lost_item_name}» нашли.")
-            ->line('Связаться с нашедшим можно по телефону: '. $this->founder_phone)
-            ->line('С уважением, команда IT Kama Sutra');
+            ->line("Вашу собственность «{$this->lost_item_name}» нашли.");
+
+        if (is_null($this->location))
+        {
+          $message->line("Примерное место нахождения вещи: ". $this->location);
+        }
+        $message->line('Связаться с нашедшим можно по телефону: '. $this->founder_phone)
+                ->line('С уважением, команда IT Kama Sutra');
+        return $message;
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\Helpers\ImageUploaderHelper;
+use App\Http\Requests\UserItemGetRequest;
 use App\Http\Requests\UserItemStoreRequest;
 use App\Http\Resources\KarmaResource;
 use App\Http\Resources\MeItemsResource;
@@ -54,7 +55,8 @@ class MeController extends BaseController
     {
         $me = $this->takeUser();
         $status = Status::where('name', 'along')->first();
-        $image = $request['img_index'] ? ImageUploaderHelper::upload($request['img_index']) : null;
+
+        $image = $request['image'] ? ImageUploaderHelper::upload($request['image']) : null;
 
         $me_items = $me->items()->create([
             'name' => $request['name'],
@@ -74,6 +76,19 @@ class MeController extends BaseController
         return $this->sendResponse(
             null,
             'Item stored successfully.'
+        );
+    }
+
+
+    public function item_delete(UserItemGetRequest $request)
+    {
+        $me = $this->takeUser();
+        $me_item = $me->items()->findOrFail($request['item_id']);
+        $me_item->delete();
+
+        return $this->sendResponse(
+            null,
+            'Item deleted successfully.'
         );
     }
 }

@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Helpers\ImageUploaderHelper;
 use App\Http\Requests\PostGetRequest;
 use App\Http\Requests\PostStoreRequest;
 use App\Http\Resources\PostsResource;
@@ -38,11 +39,13 @@ class PostController extends BaseController
         /** @var User $me */
         $me = $this->takeUser();
 
+        $image = $request['img_index'] ? ImageUploaderHelper::upload($request['img_index']) : null;
+
         /** @var Post $post */
         $me->posts()->create([
             'title' => $request['title'],
             'description' => $request['description'],
-            'img_index' => $request['image'],
+            'img_index' => $image,
             'category_id' => $request['category'],
         ]);
 

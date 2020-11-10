@@ -12,7 +12,7 @@ class StatusesSeeder extends Seeder
      */
     public function run()
     {
-        $statuses = ['along', 'lost', 'archived'];
+        $statuses = ['При мне', 'Потерян', 'Архивен'];
         foreach ($statuses as $categories) {
             Status::create([
                 'name' => $categories

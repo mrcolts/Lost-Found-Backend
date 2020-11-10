@@ -28,6 +28,8 @@ Route::group([
             Route::group(['prefix' => 'items'], static function() {
                 Route::get('', 'MeController@items_index');
                 Route::post('', 'MeController@item_store');
+                Route::delete('{item_id}', 'MeController@item_delete');
+
             });
             Route::group(['prefix' => 'posts'], static function() {
                 Route::get('', 'PostController@user_index');

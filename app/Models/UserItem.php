@@ -32,4 +32,10 @@ class UserItem extends Model
     {
         return $this->belongsTo(Status::class);
     }
+
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

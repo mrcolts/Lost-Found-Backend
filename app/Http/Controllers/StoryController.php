@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PostGetRequest;
 use App\Http\Requests\PostStoreRequest;
 use App\Http\Resources\PostsResource;
+use App\Http\Resources\StoriesResource;
 use App\Http\Traits\AuthTrait;
 use App\Models\Category;
 use App\Models\Post;
@@ -18,13 +19,17 @@ class StoryController extends BaseController
 
     public function index()
     {
-        $stories = Category::withCount('posts')
-            ->orderBy('posts_count', 'desc')
-            ->paginate(10);
+        $stories = Category::
+            with(['posts' => function ($query) {
+                $query->take(2);
+            }])
+            ->withCount('posts')
+            ->orderBy('posts_count', 'desc');
+
 
         return $this->sendResponse(
-            PostsResource::collection($stories),
-            'Posts retrieved successfully.'
+            StoriesResource::collection($stories),
+            'Stories retrieved successfully.'
         );
 
     }

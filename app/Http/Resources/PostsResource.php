@@ -20,7 +20,8 @@ class PostsResource extends JsonResource
             'description' => $this['description'],
             'imageIndex' => $this['img_index'],
             'category' => CategoriesResource::make($this['category']),
-            'user' => UserResource::make($this['user'])
+            'user' => UserResource::make($this['user']),
+            'createdAt' => $this['created_at']
         ];
     }
 }

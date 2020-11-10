@@ -50,7 +50,7 @@ class MeController extends BaseController
             'description' => $request['description'],
             'img_index' => $image,
             'category_id' => $request['category'],
-            'status' => $status->id
+            'status_id' => $status->id
         ]);
 
 

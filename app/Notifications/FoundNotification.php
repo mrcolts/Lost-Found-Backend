@@ -15,18 +15,18 @@ class FoundNotification extends Notification
 
     private string $lost_item_name;
 
-    private string $lost_item_id;
+    private string $founder_phone;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct(string $full_name, string $lost_item_name, string $lost_item_id)
+    public function __construct(string $full_name, string $lost_item_name, string $founder_phone)
     {
         $this->full_name = $full_name;
         $this->lost_item_name = $lost_item_name;
-        $this->lost_item_id = $lost_item_id;
+        $this->founder_phone = $founder_phone;
     }
 
     /**
@@ -52,7 +52,7 @@ class FoundNotification extends Notification
             ->subject('Найдена ваша собственность!')
             ->greeting("Здравствуйте, $this->full_name!")
             ->line("Вашу собственность «{$this->lost_item_name}» нашли.")
-            ->action('Связаться', config('common.web.lost_item_page') . "/$this->lost_item_id")
+            ->line('Связаться с нашедшим можно по телефону: '. $this->founder_phone)
             ->line('С уважением, команда IT Kama Sutra');
     }
 

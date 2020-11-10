@@ -18,7 +18,6 @@ class PostController extends BaseController
 
     public function user_index()
     {
-        /** @var User $me */
         $me = $this->takeUser();
 
         $posts = $me
@@ -26,6 +25,7 @@ class PostController extends BaseController
             ->with(['category', 'user'])
             ->orderBy('created_at', 'desc')
             ->get();
+
         return $this->sendResponse(
             PostsResource::collection($posts),
             'Posts retrieved successfully.'

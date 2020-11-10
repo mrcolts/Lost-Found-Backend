@@ -56,7 +56,6 @@ class FoundItemController extends BaseController
             $location
         ));
 
-
-        return 'anonymous user';
+        return $this->sendResponse(null, 'Request sent successfully.');
     }
 }

@@ -20,8 +20,10 @@ use Illuminate\Support\Facades\Hash;
 
 $factory->define(User::class, function (Faker $faker) {
     $name = $faker->name;
+    $phone = $faker->phoneNumber;
     return [
         'full_name' => $name,
+        'phone' => $phone,
         'email' => str_replace(' ', '', $name).'@mrcolt.com',
         'password' => Hash::make('12345678'),
         'img_index' => $faker->imageUrl(800, 800, 'people', true)

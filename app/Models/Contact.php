@@ -14,7 +14,6 @@ class Contact extends Model
     use Uuid;
 
     protected $fillable = [
-        'phone',
         'address',
     ];
 

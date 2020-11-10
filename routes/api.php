@@ -20,7 +20,7 @@ Route::group([
     Route::get('refresh', 'AuthController@login');
 
     Route::group([
-        'middleware' => 'jwt.auth'
+        'middleware' => ['jwt.auth']
     ], static function () {
         Route::group(['prefix' => 'me'], static function() {
             Route::get('', 'MeController@index');

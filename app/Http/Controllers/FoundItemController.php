@@ -19,6 +19,5 @@ class FoundItemController extends BaseController
         }
 
         return 'anonymous user';
-
     }
 }

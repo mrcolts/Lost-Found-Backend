@@ -19,10 +19,8 @@ class StoryController extends BaseController
 
     public function index()
     {
-        $stories = Category::withCount('posts')
-            ->with(['posts' => function ($query) {
-                $query->take(5);
-            }])
+        $stories = Category::with('posts')
+            ->withCount('posts')
             ->orderBy('posts_count', 'desc');
 
         return $this->sendResponse(

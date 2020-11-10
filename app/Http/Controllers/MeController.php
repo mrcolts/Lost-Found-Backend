@@ -31,7 +31,7 @@ class MeController extends BaseController
     public function items_index()
     {
         $me = $this->takeUser();
-        $me_items = $me->items()->with(['status']);
+        $me_items = $me->items()->with(['status'])->get();
 
         return $this->sendResponse(
             MeItemsResource::collection($me_items),
@@ -44,9 +44,11 @@ class MeController extends BaseController
         $me = $this->takeUser();
         $status = Status::where('name', 'along')->first();
 
+        $image = $request['img_index'] ? ImageUploaderHelper::upload($request['img_index']) : null;
+
         $me_items = $me->items()->create([
             'name' => $request['name'],
-            'img_index' => ImageUploaderHelper::upload($request['img_index']),
+            'img_index' => $image,
             'description' => $request['description'],
             'status' => $status->id
         ]);

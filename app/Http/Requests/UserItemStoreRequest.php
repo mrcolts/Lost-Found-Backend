@@ -26,9 +26,10 @@ class UserItemStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'email'],
-            'avatar' => ['required', 'image', 'max:8192'],
-            'category' => ['required', 'uuid', 'exists:categories,id']
+            'name' => ['required', 'string'],
+            'description' => ['required', 'string'],
+            'image' => ['nullable', 'image', 'max:8192'],
+            'category' => ['required', 'uuid', 'exists:categories,id'],
         ];
     }
 }

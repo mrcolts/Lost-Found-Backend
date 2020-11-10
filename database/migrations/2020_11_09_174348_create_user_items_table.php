@@ -21,7 +21,7 @@ class CreateUserItemsTable extends Migration
             $table->string('name');
             $table->string('img_index')->nullable();
             $table->text('description');
-            $table->string('status')->default('along');
+            $table->string('status_id');
             $table->timestamps();
         });
     }

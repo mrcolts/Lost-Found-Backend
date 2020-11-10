@@ -16,7 +16,7 @@ class UserItem extends Model
     protected $fillable = [
         'name',
         'img_index',
-        'status',
+        'status_id',
         'category_id',
         'description',
         'status',
@@ -29,14 +29,13 @@ class UserItem extends Model
     }
 
 
-    public function status()
-    {
-        return $this->belongsTo(Status::class);
-    }
-
-
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
     }
 }

@@ -53,8 +53,9 @@ class ImageUploaderHelper
             return null;
         }
 
-        return config('common.files.avatar_path') .
+        return config('app.url') .
             config('common.files.upload_path') .
+            config('common.files.avatar_path') .
             '/' .
             $img_index;
     }

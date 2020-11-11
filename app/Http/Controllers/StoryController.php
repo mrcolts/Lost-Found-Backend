@@ -29,17 +29,18 @@ class StoryController extends BaseController
 //        );
 
 
-        $stories = Category::withCount('posts')
-            ->with(['posts' => function ($query) {
+//        $stories = Category::withCount('posts')
+//            ->with(['posts' => function ($query) {
+//            }])
+//            ->orderBy('posts_count', 'desc')
+//            ->get();
+//
+//        return $this->sendResponse(
+//            StoriesResource::collection($stories),
+//            'Stories retrieved successfully.'
+//        );
 
-            }])
-            ->orderBy('posts_count', 'desc')
-            ->get();
-
-        return $this->sendResponse(
-            StoriesResource::collection($stories),
-            'Stories retrieved successfully.'
-        );
-
+        $posts = Post::all()->orderBy('created_at','desc')->get();
+        return $this->sendResponse(PostsResource::collection($posts), 'Stories retrieved successfully.');
     }
 }

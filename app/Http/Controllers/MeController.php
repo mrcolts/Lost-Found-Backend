@@ -56,7 +56,8 @@ class MeController extends BaseController
         $me = $this->takeUser();
         $status = Status::where('name', 'При мне')->first();
 
-        $image = $request['image'] ? ImageUploaderHelper::upload($request['image']) : null;
+        $image_index = ImageUploaderHelper::upload($request['image']);
+        $image = ImageUploaderHelper::getURL($image_index);
 
         $me_items = $me->items()->create([
             'name' => $request['name'],

@@ -54,7 +54,7 @@ class MeController extends BaseController
     public function item_store(UserItemStoreRequest $request)
     {
         $me = $this->takeUser();
-        $status = Status::where('name', 'along')->first();
+        $status = Status::where('name', 'При мне')->first();
 
         $image = $request['image'] ? ImageUploaderHelper::upload($request['image']) : null;
 

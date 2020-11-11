@@ -40,7 +40,7 @@ class StoryController extends BaseController
 //            'Stories retrieved successfully.'
 //        );
 
-        $posts = Post::all()->orderBy('created_at','desc')->get();
+        $posts = Post::all()->get();
         return $this->sendResponse(PostsResource::collection($posts), 'Stories retrieved successfully.');
     }
 }

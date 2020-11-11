@@ -31,10 +31,10 @@ class StoryController extends BaseController
 
         $stories = Category::withCount('posts')
             ->with(['posts' => function ($query) {
-                $query->take(5);
+
             }])
             ->orderBy('posts_count', 'desc')
-        ->get();
+            ->get();
 
         return $this->sendResponse(
             StoriesResource::collection($stories),

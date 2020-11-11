@@ -33,9 +33,9 @@ class StoryController extends BaseController
             ->with(['posts' => function ($query) {
                 $query->take(5);
             }])
-            ->orderBy('posts_count', 'desc');
+            ->orderBy('posts_count', 'desc')
+        ->get();
 
-        return $stories;
         return $this->sendResponse(
             StoriesResource::collection($stories),
             'Stories retrieved successfully.'
